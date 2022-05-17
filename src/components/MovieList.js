@@ -5,7 +5,7 @@ import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
 const MovieList = (props)=> {
-    const movies = [];
+    const {movies} = props;
 
     return (
         <div className="col">
@@ -22,7 +22,7 @@ const MovieList = (props)=> {
 
                 <tbody>
                     {
-                        props.movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
+                        movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
                     }
                 </tbody>
             </table>
@@ -32,4 +32,4 @@ const MovieList = (props)=> {
     );
 }
 
-export default connect(st => st, actions) (MovieList); // exporting actions
+export default connect(st => st) (MovieList); // exporting actions
