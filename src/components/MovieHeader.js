@@ -20,4 +20,10 @@ const MovieHeader = (props) => {
     </div>);
 }
 
-export default connect(st => st) (MovieHeader);
+
+const mapStateToProps = (state) => {
+  return({
+    appTitle:state.appTitle
+  })
+}
+export default connect(mapStateToProps)(MovieHeader);
