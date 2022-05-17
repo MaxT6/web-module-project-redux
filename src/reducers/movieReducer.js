@@ -10,6 +10,7 @@ const reducer = (movieState = initialState, action) => {
     switch(action.type) {
         case DELETE_MOVIE:
             return {
+                ...movieState,
                 movies: movieState.movies.filter(item=>(action.payload !== item.id))
             }
         default:
